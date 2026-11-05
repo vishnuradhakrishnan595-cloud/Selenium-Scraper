@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookScrape | Book Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">B</span>
+            <span>Book<span class="highlight">Scrape.</span></span>
+        </div>
+
+        <div class="header-right">
+            <span class="status-dot"></span>
+            <span>Scraper Dashboard</span>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <div>
+                <p class="eyebrow">BOOK COLLECTION / 01</p>
+                <h1>Discover your next <span>read.</span></h1>
+                <p class="hero-description">
+                    Explore books collected automatically using Selenium web scraping.
+                </p>
+            </div>
+
+            <div class="hero-icon">📚</div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon purple">📚</div>
+                <p>Total Books</p>
+                <h2 id="totalBooks">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">✓</div>
+                <p>In Stock</p>
+                <h2 id="inStock">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orange">⭐</div>
+                <p>Five Star Books</p>
+                <h2 id="fiveStar">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon blue">₹</div>
+                <p>Average Price</p>
+                <h2 id="averagePrice">£0.00</h2>
+            </div>
+
+        </section>
+
+        <!-- Search and Filters -->
+        <section class="toolbar">
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search books by title..."
+                >
+            </div>
+
+            <select id="ratingFilter">
+                <option value="all">All Ratings</option>
+                <option value="Five">5 Stars</option>
+                <option value="Four">4 Stars</option>
+                <option value="Three">3 Stars</option>
+                <option value="Two">2 Stars</option>
+                <option value="One">1 Star</option>
+            </select>
+
+            <select id="availabilityFilter">
+                <option value="all">All Availability</option>
+                <option value="in">In Stock</option>
+                <option value="out">Out of Stock</option>
+            </select>
+
+            <select id="sortFilter">
+                <option value="default">Default Order</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+                <option value="az">Name: A to Z</option>
+                <option value="za">Name: Z to A</option>
+            </select>
+
+        </section>
+
+        <!-- Book Collection -->
+        <section class="collection">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Explore Books</h2>
+                    <p>Browse your scraped book collection.</p>
+                </div>
+
+                <span id="resultCount">0 books found</span>
+            </div>
+
+            <div id="bookGrid" class="book-grid">
+
+                <div class="loading">
+                    Loading books...
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>BookScrape © 2026 | Powered by Python & Selenium</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
